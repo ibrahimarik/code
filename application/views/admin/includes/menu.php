@@ -45,8 +45,11 @@
                     <li>
                         <a href="<?=base_url("yonetim/harita1")?>" title="Dashboard"><span class="menu-item-parent">Harita1</span></a>
                     </li>
+                    <li class="<?=($this->uri->segment(2)==='proje' and $this->uri->segment(3)==='projeler')?'active':''?>">
+                        <a href="<?=base_url("yonetim/proje/projeler")?>" title="Projeler"><span class="menu-item-parent">Projeler</span></a>
+                    </li>
                     <li class="<?=($this->uri->segment(2)==='proje' and $this->uri->segment(3)==='ekle')?'active':''?>">
-                        <a href="<?=base_url("yonetim/proje/ekle")?>" title="Dashboard"><span class="menu-item-parent">Proje Ekle</span></a>
+                        <a href="<?=base_url("yonetim/proje/ekle")?>" title="Proje Ekle"><span class="menu-item-parent">Proje Ekle</span></a>
                     </li>
                 </ul>
             </li>
