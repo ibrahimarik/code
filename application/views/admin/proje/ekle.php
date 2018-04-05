@@ -86,7 +86,7 @@
                         <!-- widget content -->
                         <div class="widget-body no-padding">
 
-                            <form id="order-form" class="smart-form" novalidate="novalidate">
+                            <form id="order-form" class="smart-form" novalidate="novalidate" method="post" action="<?php echo site_url('yonetim/proje/post')?>>
 
                                 <p class="alert alert-danger"> <strong><i class="fa fa-check"></i> Uyarı :</strong> Konum bilgisi için haritayı kullanın. </p>
 

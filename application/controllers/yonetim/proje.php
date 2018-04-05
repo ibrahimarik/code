@@ -8,7 +8,7 @@ class Proje extends Backend_Controller
         $this->load->database();
         $this->load->helper('url');
         $this->load->library('googlemaps');
-        $this->load->helper('menu');
+        $this->load->model('projemodel');
 
     }
 
@@ -453,5 +453,18 @@ class Proje extends Backend_Controller
         //    $this->load->view('admin/harita3', $data);
         $data['main_content'] = 'admin/proje/ekle';
         $this->load->view('admin/includes/template', $data);
+    }
+    public function post()
+    {
+        if ($this->input->server('REQUEST_METHOD') === 'POST')
+        {
+
+            $islem = $this->projemodel->projekle($ustkatid,$kategori,$this->input->post('seourl'),$this->input->post('baslik'),$this->input->post('kisaicerik'),$this->input->post('icerik'),"resimyok.png");
+        }
+        else
+        {
+
+        }
+        $knt = $this->loginmodel->knt($this->input->post('login'), $this->input->post('password'));
     }
 }

@@ -54,16 +54,16 @@
                 </ul>
             </li>
             <li class="top-menu-invisible">
-                <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">SmartAdmin Intel</span></a>
+                <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">SmartAdmin Intel1</span></a>
                 <ul>
                     <li class="">
-                        <a href="layouts.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-gear"></i> <span class="menu-item-parent">App Layouts</span></a>
+                        <a href="layouts.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-gear"></i> <span class="menu-item-parent">App Layouts1</span></a>
                     </li>
                     <li class="">
-                        <a href="skins.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-picture-o"></i> <span class="menu-item-parent">Prebuilt Skins</span></a>
+                        <a href="skins.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-picture-o"></i> <span class="menu-item-parent">Prebuilt Skins1</span></a>
                     </li>
                     <li>
-                        <a href="applayout.html"><i class="fa fa-cube"></i> App Settings</a>
+                        <a href="applayout.html"><i class="fa fa-cube"></i> App Settings1</a>
                     </li>
                 </ul>
             </li>
