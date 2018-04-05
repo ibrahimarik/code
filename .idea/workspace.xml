@@ -3,12 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="146db156-3a1c-45ba-b5bc-13856d38a418" name="Default" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/application/models/admin/projemodel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/yonetim/proje.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/yonetim/proje.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/helpers/menu_helper.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/admin/proje/ekle.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/proje/ekle.php" afterDir="false" />
 =======
+=======
+>>>>>>> 6a50fba7bbe698ebd6fefb6430cb28c2113c07c5
       <change beforePath="$PROJECT_DIR$/application/views/admin/includes/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/includes/menu.php" afterDir="false" />
 >>>>>>> 6a50fba7bbe698ebd6fefb6430cb28c2113c07c5
     </list>
@@ -24,6 +27,7 @@
       <file leaf-file-name="menu.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/admin/includes/menu.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
             <state relative-caret-position="1044">
               <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
@@ -44,6 +48,11 @@
             <state relative-caret-position="551">
               <caret line="67" column="21" lean-forward="true" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
               <folding>
+=======
+            <state relative-caret-position="551">
+              <caret line="67" column="21" lean-forward="true" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+              <folding>
+>>>>>>> 6a50fba7bbe698ebd6fefb6430cb28c2113c07c5
                 <marker date="1522775289468" expanded="true" signature="16653:16865" ph="..." />
                 <marker date="1522775289468" expanded="true" signature="16755:16847" ph="..." />
                 <marker date="1522775289468" expanded="true" signature="17584:17818" ph="..." />
@@ -56,6 +65,9 @@
                 <marker date="1522775289468" expanded="true" signature="20278:20437" ph="..." />
                 <marker date="1522775289468" expanded="true" signature="21085:21315" ph="..." />
                 <marker date="1522775289468" expanded="true" signature="21208:21297" ph="..." />
+<<<<<<< HEAD
+>>>>>>> 6a50fba7bbe698ebd6fefb6430cb28c2113c07c5
+=======
 >>>>>>> 6a50fba7bbe698ebd6fefb6430cb28c2113c07c5
               </folding>
             </state>
@@ -336,7 +348,11 @@
   </component>
   <component name="TimeTrackingManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="48722000" />
+=======
+    <option name="totallyTimeSpent" value="46568000" />
+>>>>>>> 6a50fba7bbe698ebd6fefb6430cb28c2113c07c5
 =======
     <option name="totallyTimeSpent" value="46568000" />
 >>>>>>> 6a50fba7bbe698ebd6fefb6430cb28c2113c07c5
@@ -386,6 +402,7 @@
           <caret line="43" column="123" selection-start-line="43" selection-start-column="123" selection-end-line="43" selection-end-column="123" />
           <folding>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <marker date="1522775700209" expanded="true" signature="16649:16861" ph="..." />
             <marker date="1522775700209" expanded="true" signature="16751:16843" ph="..." />
             <marker date="1522775700209" expanded="true" signature="17580:17814" ph="..." />
@@ -399,6 +416,8 @@
             <marker date="1522775700209" expanded="true" signature="21081:21311" ph="..." />
             <marker date="1522775700209" expanded="true" signature="21204:21293" ph="..." />
 =======
+=======
+>>>>>>> 6a50fba7bbe698ebd6fefb6430cb28c2113c07c5
             <marker date="1522775289468" expanded="true" signature="16653:16865" ph="..." />
             <marker date="1522775289468" expanded="true" signature="16755:16847" ph="..." />
             <marker date="1522775289468" expanded="true" signature="17584:17818" ph="..." />
@@ -411,6 +430,9 @@
             <marker date="1522775289468" expanded="true" signature="20278:20437" ph="..." />
             <marker date="1522775289468" expanded="true" signature="21085:21315" ph="..." />
             <marker date="1522775289468" expanded="true" signature="21208:21297" ph="..." />
+<<<<<<< HEAD
+>>>>>>> 6a50fba7bbe698ebd6fefb6430cb28c2113c07c5
+=======
 >>>>>>> 6a50fba7bbe698ebd6fefb6430cb28c2113c07c5
           </folding>
         </state>
@@ -498,6 +520,7 @@
           <caret line="43" column="123" selection-start-line="43" selection-start-column="123" selection-end-line="43" selection-end-column="123" />
           <folding>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <marker date="1522775700209" expanded="true" signature="16649:16861" ph="..." />
             <marker date="1522775700209" expanded="true" signature="16751:16843" ph="..." />
             <marker date="1522775700209" expanded="true" signature="17580:17814" ph="..." />
@@ -511,6 +534,8 @@
             <marker date="1522775700209" expanded="true" signature="21081:21311" ph="..." />
             <marker date="1522775700209" expanded="true" signature="21204:21293" ph="..." />
 =======
+=======
+>>>>>>> 6a50fba7bbe698ebd6fefb6430cb28c2113c07c5
             <marker date="1522775289468" expanded="true" signature="16653:16865" ph="..." />
             <marker date="1522775289468" expanded="true" signature="16755:16847" ph="..." />
             <marker date="1522775289468" expanded="true" signature="17584:17818" ph="..." />
@@ -523,6 +548,9 @@
             <marker date="1522775289468" expanded="true" signature="20278:20437" ph="..." />
             <marker date="1522775289468" expanded="true" signature="21085:21315" ph="..." />
             <marker date="1522775289468" expanded="true" signature="21208:21297" ph="..." />
+<<<<<<< HEAD
+>>>>>>> 6a50fba7bbe698ebd6fefb6430cb28c2113c07c5
+=======
 >>>>>>> 6a50fba7bbe698ebd6fefb6430cb28c2113c07c5
           </folding>
         </state>
@@ -823,6 +851,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/yonetim/proje.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="589">
           <caret line="465" lean-forward="true" selection-start-line="465" selection-end-line="465" />
         </state>
@@ -839,6 +868,8 @@
             <marker date="1522824527856" expanded="true" signature="8680:8734" ph="..." />
             <marker date="1522824527856" expanded="true" signature="9087:9137" ph="..." />
 =======
+=======
+>>>>>>> 6a50fba7bbe698ebd6fefb6430cb28c2113c07c5
         <state relative-caret-position="551">
           <caret line="67" column="21" lean-forward="true" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
           <folding>
@@ -854,6 +885,9 @@
             <marker date="1522775289468" expanded="true" signature="20278:20437" ph="..." />
             <marker date="1522775289468" expanded="true" signature="21085:21315" ph="..." />
             <marker date="1522775289468" expanded="true" signature="21208:21297" ph="..." />
+<<<<<<< HEAD
+>>>>>>> 6a50fba7bbe698ebd6fefb6430cb28c2113c07c5
+=======
 >>>>>>> 6a50fba7bbe698ebd6fefb6430cb28c2113c07c5
           </folding>
         </state>
