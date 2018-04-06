@@ -8,7 +8,7 @@ class Proje extends Backend_Controller
         $this->load->database();
         $this->load->helper('url');
         $this->load->library('googlemaps');
-        $this->load->model('projemodel');
+        $this->load->model('admin/projemodel');
 
     }
 
@@ -18,6 +18,9 @@ class Proje extends Backend_Controller
     }
     public function ekle()
     {
+        $data['flash_message'] = FALSE;
+        $data['mesaj'] = "Konum bilgisi için haritayı kullanın.";
+
         $data['css']=array("css/bootstrap.min.css",
             "css/font-awesome.min.css",
             "css/smartadmin-production-plugins.min.css",
@@ -451,20 +454,94 @@ class Proje extends Backend_Controller
 
         $data['map'] = $this->googlemaps->create_map();
         //    $this->load->view('admin/harita3', $data);
+
+
+        if ($this->input->server('REQUEST_METHOD') === 'POST')
+        {
+            $config = array(
+                'upload_path' => "./assets/uploads/proje/",
+                'allowed_types' => "gif|jpg|png|jpeg|pdf",
+                'overwrite' => TRUE,
+                'max_size' => "2048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
+                'max_height' => "768",
+                'max_width' => "1024",
+                'file_name' => date('Ymd').'-'.$_FILES['userfile']['name']
+            );
+            $this->load->library('upload', $config);
+            //var_dump($this->upload->display_errors());
+            if($this->upload->do_upload())
+            {
+                $islem = $this->projemodel->projeekle($this->input->post('enlem'),$this->input->post('boylam'),$this->input->post('proje'),$this->input->post('projesahip'),$this->input->post('baslangic'),$this->input->post('bitis'),$this->input->post('durum'),$this->input->post('tarih'),$this->input->post('nakdi'),$this->input->post('fiziki'),$config['file_name'],$this->input->post('tanitim'));
+                if($islem)
+                {
+                    $data['flash_message'] = TRUE;
+                    $data['mesaj'] = "Proje Başarıyla Eklendi.";
+                }
+                else
+                {
+                    $data['flash_message'] = FALSE;
+                    $data['mesaj'] = "Proje Eklenemedi!";
+                }
+            }
+            else
+            {
+                $islem = $this->projemodel->projeekle($this->input->post('enlem'),$this->input->post('boylam'),$this->input->post('proje'),$this->input->post('projesahip'),$this->input->post('baslangic'),$this->input->post('bitis'),$this->input->post('durum'),$this->input->post('tarih'),$this->input->post('nakdi'),$this->input->post('fiziki'),"resimyok.png",$this->input->post('tanitim'));
+
+                if($islem)
+                {
+                    $data['flash_message'] = TRUE;
+                    $data['mesaj'] = "Proje Başarıyla Eklendi. (Proje Resmi Eklenemedi!)";
+                }
+                else
+                {
+                    $data['flash_message'] = FALSE;
+                    $data['mesaj'] = "Proje Eklenemedi!";
+                }
+            }
+
+        }
+
         $data['main_content'] = 'admin/proje/ekle';
         $this->load->view('admin/includes/template', $data);
     }
-    public function post()
+    public function projeler()
     {
-        if ($this->input->server('REQUEST_METHOD') === 'POST')
-        {
+        $data['css']=array("css/bootstrap.min.css",
+            "css/font-awesome.min.css",
+            "css/smartadmin-production-plugins.min.css",
+            "css/smartadmin-production.min.css",
+            "css/smartadmin-skins.min.css",
+            "css/smartadmin-rtl.min.css",
+            "css/demo.min.css"
+        );
+        $data['jss']=array("js/app.config.js",
+            "js/plugin/jquery-touch/jquery.ui.touch-punch.min.js",
+            "js/bootstrap/bootstrap.min.js",
+            "js/notification/SmartNotification.min.js",
+            "js/smartwidgets/jarvis.widget.min.js",
+            "js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js",
+            "js/plugin/sparkline/jquery.sparkline.min.js",
+            "js/plugin/jquery-validate/jquery.validate.min.js",
+            "js/plugin/masked-input/jquery.maskedinput.min.js",
+            "js/plugin/select2/select2.min.js",
+            "js/plugin/bootstrap-slider/bootstrap-slider.min.js",
+            "js/plugin/msie-fix/jquery.mb.browser.min.js",
+            "js/plugin/fastclick/fastclick.min.js",
+            "js/demo.min.js",
+            "js/app.min.js",
+            "js/speech/voicecommand.min.js",
+            "js/smart-chat-ui/smart.chat.ui.min.js",
+            "js/smart-chat-ui/smart.chat.manager.min.js",
 
-            $islem = $this->projemodel->projekle($ustkatid,$kategori,$this->input->post('seourl'),$this->input->post('baslik'),$this->input->post('kisaicerik'),$this->input->post('icerik'),"resimyok.png");
-        }
-        else
-        {
+            "js/plugin/datatables/jquery.dataTables.min.js",
+            "js/plugin/datatables/dataTables.colVis.min.js",
+            "js/plugin/datatables/dataTables.tableTools.min.js",
+            "js/plugin/datatables/dataTables.bootstrap.min.js",
+            "js/plugin/datatable-responsive/datatables.responsive.min.js"
 
-        }
-        $knt = $this->loginmodel->knt($this->input->post('login'), $this->input->post('password'));
+        );
+
+        $data['main_content'] = 'admin/proje/projeler';
+        $this->load->view('admin/includes/template', $data);
     }
 }

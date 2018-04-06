@@ -4,18 +4,17 @@ class Projemodel extends CI_Model
     function __construct()
     {
         parent::__construct();
+        $this->load->database();
     }
 
-    public function projeekle($tablo=null,$katid,$kategori=null,$aciklama=null)
+    public function projeekle($enlem=null,$boylam=null,$proje=null,$projesahip=null,$baslangic=null,$bitis=null,$durum=null,$tarih=null,$nakdi=null,$fiziki=null,$resim=null,$tanitim=null)
     {
-        $data = array(
-            'katid' => $katid,
-            'kategori' => $kategori,
-            'aciklama' => $aciklama,
-            'saveuser' => $this->session->userdata('sicil'),
-            'savedate' => date('Y-m-d H:i:s')
-        );
-        return $this->db->insert($tablo, $data);
+
+        $sql = "call projeekle(?,?,?,?,?,?,?,?,?,?,?,?)";
+        $execute = $this->db->query($sql, array($enlem,$boylam,$proje,$projesahip,$baslangic,$bitis,$durum,$tarih,$nakdi,$fiziki,$resim,$tanitim));
+        return $execute;
+
+
     }
 
 
