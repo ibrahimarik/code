@@ -33,6 +33,23 @@
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 
+    <script type="text/javascript">
+        $( document ).ready(function() {
+           $(".loader").fadeOut("slow");
+        })
+    </script>
+    <style>
+        .loader {
+            position: fixed;
+         /*   left: 11.5%; */
+            top: 0px;
+            width: 87.5%;
+            height: 100%;
+            z-index: 9999;
+            background: url('/assets/backend/img/loader2.gif') 50% 50% no-repeat rgb(71,71,71);
+        }
+    </style>
+
     <!-- FAVICONS -->
     <link rel="shortcut icon" href="/assets/backend/img/favicon/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/assets/backend/img/favicon/favicon.ico" type="image/x-icon">

@@ -45,8 +45,8 @@
                     <li>
                         <a href="<?=base_url("yonetim/harita1")?>" title="Dashboard"><span class="menu-item-parent">Harita1</span></a>
                     </li>
-                    <li class="<?=($this->uri->segment(2)==='proje' and $this->uri->segment(3)==='projeler')?'active':''?>">
-                        <a href="<?=base_url("yonetim/proje/projeler")?>" title="Projeler"><span class="menu-item-parent">Projeler</span></a>
+                    <li class="<?=($this->uri->segment(2)==='proje' and $this->uri->segment(3)==='listele')?'active':''?>">
+                        <a href="<?=base_url("yonetim/proje/listele")?>" title="Projeler"><span class="menu-item-parent">Projeler</span></a>
                     </li>
                     <li class="<?=($this->uri->segment(2)==='proje' and $this->uri->segment(3)==='ekle')?'active':''?>">
                         <a href="<?=base_url("yonetim/proje/ekle")?>" title="Proje Ekle"><span class="menu-item-parent">Proje Ekle</span></a>
@@ -473,3 +473,40 @@
 
 </aside>
 <!-- END NAVIGATION -->
+
+
+
+<!-- MAIN PANEL -->
+<div id="main" role="main">
+
+    <div class="loader"></div>
+    <!-- RIBBON -->
+    <div id="ribbon">
+
+				<span class="ribbon-button-alignment">
+					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+						<i class="fa fa-refresh"></i>
+					</span>
+				</span>
+
+        <!-- breadcrumb -->
+        <ol class="breadcrumb">
+            <li><a href="<?php echo site_url($this->uri->segment(1))?>/portal"><?=strtoupper($this->uri->segment(1))?></a></li>
+            <li><a href="<?php echo site_url($this->uri->segment(1).'/'.$this->uri->segment(2).'')?>"><?=strtoupper($this->uri->segment(2))?></a></li>
+            <li><a href="<?php echo site_url($this->uri->segment(1).'/'.$this->uri->segment(2).'/'.$this->uri->segment(3).'')?>"><?=strtoupper($this->uri->segment(3))?></a></li>
+        </ol>
+        <!-- end breadcrumb -->
+
+        <!-- You can also add more buttons to the
+        ribbon for further usability
+
+        Example below:
+
+        <span class="ribbon-button-alignment pull-right">
+        <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+        <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+        <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+        </span> -->
+
+    </div>
+    <!-- END RIBBON -->

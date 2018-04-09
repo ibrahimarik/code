@@ -41,7 +41,7 @@ class guvenlik extends Public_Controller
                     'login_admin' => TRUE
                 );
                 $this->session->set_userdata($data);
-                redirect('yonetim/portal');
+                   redirect('yonetim/portal');
             } else {
                 redirect('guvenlik/giris');
             }

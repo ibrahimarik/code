@@ -4,22 +4,48 @@ class Projemodel extends CI_Model
     function __construct()
     {
         parent::__construct();
-        $this->load->database();
+
     }
 
     public function projeekle($enlem=null,$boylam=null,$proje=null,$projesahip=null,$baslangic=null,$bitis=null,$durum=null,$tarih=null,$nakdi=null,$fiziki=null,$resim=null,$tanitim=null)
     {
-
         $sql = "call projeekle(?,?,?,?,?,?,?,?,?,?,?,?)";
         $execute = $this->db->query($sql, array($enlem,$boylam,$proje,$projesahip,$baslangic,$bitis,$durum,$tarih,$nakdi,$fiziki,$resim,$tanitim));
         return $execute;
+    }
 
+    public function guncelle($id=null,$enlem=null,$boylam=null,$proje=null,$projesahip=null,$baslangic=null,$bitis=null,$durum=null,$tarih=null,$nakdi=null,$fiziki=null,$resim=null,$tanitim=null)
+    {
+        $sql = "call projeguncelle(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $execute = $this->db->query($sql, array($id,$enlem,$boylam,$proje,$projesahip,$baslangic,$bitis,$durum,$tarih,$nakdi,$fiziki,$resim,$tanitim));
+        return $execute;
+    }
+
+    public function proje($id=null)
+    {
+        $sql = "call proje(?)";
+        $execute = $this->db->query($sql, array($id));
+        return $execute->result();
+
+    }
+
+    public function durum()
+    {
+        $query = $this->db->query("SELECT * FROM durum;");
+        return $query->result_array();
 
     }
 
 
 
 
+    public function hudut($id=null)
+    {
+        $sql = "call hudut(?)";
+        $execute = $this->db->query($sql, array($id));
+        return $execute->result();
+
+    }
 
 
 

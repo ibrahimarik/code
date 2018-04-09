@@ -1,3 +1,6 @@
+</div>
+<!-- END MAIN PANEL -->
+
 <!-- PAGE FOOTER -->
 <div class="page-footer">
     <div class="row">

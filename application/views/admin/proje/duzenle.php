@@ -1,6 +1,5 @@
     <!-- MAIN CONTENT -->
     <div id="content">
-
         <div class="row">
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
                 <h1 class="page-title txt-color-blueDark">
@@ -79,7 +78,7 @@
                 <div class="jarviswidget" id="wid-id-3" data-widget-editbutton="false" data-widget-custombutton="false">
                     <header>
                         <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                        <h2>Proje Ekle </h2>
+                        <h2>Proje Düzenle </h2>
 
                     </header>
 
@@ -96,7 +95,8 @@
                         <!-- widget content -->
                         <div class="widget-body no-padding">
 
-                            <form id="order-form" class="smart-form" novalidate="novalidate" action="<?php echo site_url('yonetim/proje/ekle')?>" method="post" enctype="multipart/form-data">
+                            <form id="order-form" class="smart-form" novalidate="novalidate" action="<?php echo site_url('yonetim/proje/guncelle')?>" method="post" enctype="multipart/form-data">
+                                <input type="text" id="us2-id" hidden name="id" value="<?=$proje[0]->id?>" readonly>
                                 <?php
                                 if($flash_message)
                                 {
@@ -116,12 +116,12 @@
                                     <div class="row">
                                         <section class="col col-6">
                                             <label class="input"> <i class="icon-append fa fa-map-marker"></i>
-                                                <input type="text" id="us2-lat" name="enlem" placeholder="Enlem" readonly>
+                                                <input type="text" id="us2-lat" name="enlem" value="<?=$proje[0]->enlem?>" placeholder="Enlem" readonly>
                                             </label>
                                         </section>
                                         <section class="col col-6">
                                             <label class="input"> <i class="icon-append fa fa-map-marker"></i>
-                                                <input type="text" name="boylam" id="us2-lon" placeholder="Boylam" readonly>
+                                                <input type="text" name="boylam" value="<?=$proje[0]->boylam?>" id="us2-lon" placeholder="Boylam" readonly>
                                             </label>
                                         </section>
                                     </div>
@@ -129,12 +129,12 @@
                                     <div class="row">
                                         <section class="col col-6">
                                             <label class="input"> <i class="icon-append fa fa-building"></i>
-                                                <input type="text" name="proje" id="us2-address" placeholder="Proje Adı">
+                                                <input type="text" name="proje" value="<?=$proje[0]->proje?>" id="us2-address" placeholder="Proje Adı">
                                             </label>
                                         </section>
                                         <section class="col col-6">
                                             <label class="input"> <i class="icon-append fa fa-building"></i>
-                                                <input type="text" name="projesahip" placeholder="Proje Sahibi Kuruluş">
+                                                <input type="text" name="projesahip" value="<?=$proje[0]->projesahip?>" placeholder="Proje Sahibi Kuruluş">
                                             </label>
                                         </section>
                                     </div>
@@ -144,12 +144,12 @@
                                     <div class="row">
                                         <section class="col col-6">
                                             <label class="input"> <i class="icon-append fa fa-calendar"></i>
-                                                <input type="text" name="baslangic" id="startdate" placeholder="Proje Başlangıç Tarihi">
+                                                <input type="text" name="baslangic" value="<?=$proje[0]->baslangic?>" id="startdate" placeholder="Proje Başlangıç Tarihi">
                                             </label>
                                         </section>
                                         <section class="col col-6">
                                             <label class="input"> <i class="icon-append fa fa-calendar"></i>
-                                                <input type="text" name="bitis" id="finishdate" placeholder="Proje Bitiş Tarihi">
+                                                <input type="text" name="bitis" value="<?=$proje[0]->bitis?>" id="finishdate" placeholder="Proje Bitiş Tarihi">
                                             </label>
                                         </section>
                                     </div>
@@ -160,16 +160,24 @@
                                         <section class="col col-6">
                                             <label class="select">
                                                 <select name="durum">
-                                                    <option value="0" selected="" disabled="">Proje Durumu</option>
-                                                    <?php $query = $this->db->query("select * from durum order by id ASC");
-                                                    foreach($query->result_array() as $row): ?>
-                                                        <option value="<?=$row["id"]?>"><?=$row["durum"]?></option>
-                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach($durum as $dur):
+                                                     if($proje[0]->projedurum == $dur['durum'])
+                                                     { ?>
+                                                         <option value="<?=$dur['id']?>" selected><?=$dur['durum']?></option>
+                                                     <?php }
+                                                     else
+                                                     { ?>
+                                                     <option value="<?=$dur['id']?>"><?=$dur['durum']?></option>
+                                                    <?php
+                                                     }
+                                                    endforeach;?>
+
                                                 </select> <i></i> </label>
                                         </section>
                                         <section class="col col-6">
                                             <label class="input"> <i class="icon-append fa fa-calendar"></i>
-                                                <input type="text" name="tarih" id="date" placeholder="İhale Tarihi">
+                                                <input type="text" name="tarih" value="<?=$proje[0]->tarih?>" id="date" placeholder="İhale Tarihi">
                                             </label>
                                         </section>
                                     </div>
@@ -177,12 +185,12 @@
                                     <div class="row">
                                         <section class="col col-6">
                                             <label class="input">
-                                                <input type="text" name="nakdi" placeholder="Nakdi Gerçekleşme Oranı" data-mask="999">
+                                                <input type="text" name="nakdi" value="<?=$proje[0]->nakdi?>" placeholder="Nakdi Gerçekleşme Oranı" data-mask="999">
                                             </label>
                                         </section>
                                         <section class="col col-6">
                                             <label class="input">
-                                                <input type="text" name="fiziki" placeholder="Fiziki Gerçekleşme Oranı" data-mask="999">
+                                                <input type="text" name="fiziki" value="<?=$proje[0]->fiziki?>" placeholder="Fiziki Gerçekleşme Oranı" data-mask="999">
                                             </label>
                                         </section>
                                     </div>
@@ -200,12 +208,12 @@
 
                                     <section>
                                         <label class="textarea"> <i class="icon-append fa fa-comment"></i>
-                                            <textarea rows="5" name="tanitim" placeholder="Proje Tanıtımı"></textarea>
+                                            <textarea rows="5" name="tanitim" placeholder="Proje Tanıtımı"><?=$proje[0]->tanitim?></textarea>
                                         </label>
                                     </section>
                                 </fieldset>
                                 <footer>
-                                    <input type="submit" class="btn btn-primary" id="sbmt" name="ekle" value="Proje Ekle">
+                                    <input type="submit" class="btn btn-primary" id="sbmt" name="ekle" value="Proje Güncelle">
                                 </footer>
                             </form>
 
