@@ -1,49 +1,112 @@
-   <!-- MAIN CONTENT -->
-    <div id="content">
-        <script>
-            $(document).ready(function() {
-                $.smallBox({
-                    title : "James Simmons liked your comment",
-                    content : "<i class='fa fa-clock-o'></i> <i>2 seconds ago...</i>",
-                    color : "#296191",
-                    iconSmall : "fa fa-thumbs-up bounce animated",
-                    timeout : 4000
+<script>
+    $(document).ready(function() {
+        $.popmesaj = function(drm,mesaj){
+            swal({
+                position: 'top-end',
+                type: drm,
+                title: mesaj,
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
+        $('.btn-sil').click(function(){
+
+            swal({
+                title: 'Emin misin?',
+                text: "Seçilen Proje Silinecek!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Evet, Silelim!',
+                cancelButtonText: 'Hayır, İptal Et!',
+                confirmButtonClass: 'btn btn-success',
+                cancelButtonClass: 'btn btn-danger',
+                buttonsStyling: false,
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    swal(
+                        'Silindi!',
+                        'Seçilen Proje Silindi.',
+                        'success'
+                    )
+                    $.projesil($(this).attr('data-id'));
+                    $(this).parent('td').parent('tr').delay(1000).fadeOut(400);
+                } else if (
+                    // Read more about handling dismissals
+                    result.dismiss === swal.DismissReason.cancel
+                ) {
+                    swal(
+                        'İptal',
+                        'İşlem İptal Edildi',
+                        'error'
+                    )
+                //    $(this).parent('td').parent('tr').delay(1000).css({"background-color":"red"});
+
+                    $(this).parent('td').parent('tr').hide(1000,"easeOutBounce");
+                    $(this).parent('td').parent('tr').delay(2000);
+                    $(this).parent('td').parent('tr').show(1000,"easeOutBounce",);
+
+                }
+            })
+
+            $.projesil = function(id){
+                $.ajax({
+                    url : "<?php echo site_url('yonetim/proje/sil/')?>" + id,
+                    type: "GET",
+                    dataType: "JSON",
+                    success: function(dss)
+                    {
+                        alert(dss);
+                    }
                 });
 
 
+            }
+
+        });
+
+
+    })
 
 
 
 
+</script>
 
 
-
-            })
-        </script>
-
+<!-- MAIN CONTENT -->
+    <div id="content">
         <?php
         if($flash_message)
         {
             if($flash_message == TRUE)
-            { ?>
+            {
+                ?>
                 <script>
                     $(document).ready(function() {
-
+                        var drm = "<?php echo $drm; ?>";
+                        var mesaj = "<?php echo $mesaj; ?>";
+                        $.popmesaj(drm,mesaj)
                     })
                 </script>
-            <?php
+                <?php
+            }
+            else
+            {
+                ?>
+                <script>
+                    $(document).ready(function() {
+                        var drm = "<?php echo $drm; ?>";
+                        var mesaj = "<?php echo $mesaj; ?>";
+                        $.popmesaj(drm,mesaj)
+                    })
+                </script>
+                <?php
             }
         }
-        else
-        {
-            echo "YOK";
-        }
         ?>
-
-
-
-
-
 
         <div class="row">
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
@@ -156,7 +219,7 @@
                                         <td><?php echo $row['tarih']; ?></td>
                                         <td>
                                             <a href="<?php echo site_url('yonetim/proje/duzenle/'.$row['id'].'')?>" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Projeyi Düzenlemek için tıklayın." class="btn btn-xs btn-info"><span class="fa fa-edit"></span></a>
-                                            <a href="<?php echo site_url('yonetim/proje/sil/'.$row['id'].'')?>" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Projeyi Silmek için tıklayın." class="btn btn-xs btn-danger"><span class="fa fa-trash-o"></span></a>
+                                            <a data-id="<?php echo $row['id']; ?>" data-container="body"  data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Projeyi Silmek için tıklayın." class="btn btn-xs btn-danger btn-sil"><span class="fa fa-trash-o"></span></a>
                                         </td>
                                     </tr>
                                     <?php endforeach; ?>
@@ -186,6 +249,7 @@
 
     </div>
     <!-- END MAIN CONTENT -->
+
 
 <script>
 

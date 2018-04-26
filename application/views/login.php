@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="tr">
-
 <head>
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="/assets/login/img/apple-icon.png" />
@@ -23,10 +22,11 @@
 
 <body>
 <div class="wrapper wrapper-full-page">
-    <div class="full-page lock-page" filter-color="black" data-image="/assets/login/img/lock.jpeg">
+    <div class="full-page lock-page" filter-color="black" data-image="/assets/login/img/login.jpg">
         <!--   you can change the color of the filter page using: data-color="blue | green | orange | red | purple" -->
         <div class="content">
             <form action="<?php echo site_url('guvenlik/giris')?>" method="post">
+                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
                 <div class="card card-profile card-hidden">
                     <div class="card-avatar">
                             <img class="avatar" src="/assets/login/img/faces/avatar.png" alt="...">

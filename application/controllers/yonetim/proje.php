@@ -18,7 +18,8 @@ class Proje extends Backend_Controller
             "css/smartadmin-production.min.css",
             "css/smartadmin-skins.min.css",
             "css/smartadmin-rtl.min.css",
-            "css/demo.min.css"
+            "css/demo.min.css",
+            "js/plugin/sweetalert2/sweetalert2.min.css"
         );
         $data['jss']=array("js/app.config.js",
             "js/plugin/jquery-touch/jquery.ui.touch-punch.min.js",
@@ -43,7 +44,12 @@ class Proje extends Backend_Controller
             "js/plugin/datatables/dataTables.colVis.min.js",
             "js/plugin/datatables/dataTables.tableTools.min.js",
             "js/plugin/datatables/dataTables.bootstrap.min.js",
-            "js/plugin/datatable-responsive/datatables.responsive.min.js"
+            "js/plugin/datatable-responsive/datatables.responsive.min.js",
+
+            "js/notify.js",
+            "js/animate.js",
+            "js/plugin/sweetalert2/sweetalert2.min.js"
+
 
         );
 
@@ -61,7 +67,8 @@ class Proje extends Backend_Controller
             "css/smartadmin-production.min.css",
             "css/smartadmin-skins.min.css",
             "css/smartadmin-rtl.min.css",
-            "css/demo.min.css"
+            "css/demo.min.css",
+            "js/plugin/sweetalert2/sweetalert2.min.css"
         );
         $data['jss']=array("js/app.config.js",
             "js/plugin/jquery-touch/jquery.ui.touch-punch.min.js",
@@ -80,7 +87,11 @@ class Proje extends Backend_Controller
             "js/app.min.js",
             "js/speech/voicecommand.min.js",
             "js/smart-chat-ui/smart.chat.ui.min.js",
-            "js/smart-chat-ui/smart.chat.manager.min.js"
+            "js/smart-chat-ui/smart.chat.manager.min.js",
+
+            "js/notify.js",
+            "js/animate.js",
+            "js/plugin/sweetalert2/sweetalert2.min.js"
 
 
         );
@@ -2446,11 +2457,13 @@ class Proje extends Backend_Controller
                 {
                     $data['flash_message'] = TRUE;
                     $data['mesaj'] = "Proje Başarıyla Eklendi.";
+                    $data['drm'] = "success";
                 }
                 else
                 {
                     $data['flash_message'] = FALSE;
                     $data['mesaj'] = "Proje Eklenemedi!";
+                    $data['drm'] = "error";
                 }
             }
             else
@@ -2461,11 +2474,13 @@ class Proje extends Backend_Controller
                 {
                     $data['flash_message'] = TRUE;
                     $data['mesaj'] = "Proje Başarıyla Eklendi. (Proje Resmi Eklenemedi!)";
+                    $data['drm'] = "success";
                 }
                 else
                 {
                     $data['flash_message'] = FALSE;
                     $data['mesaj'] = "Proje Eklenemedi!";
+                    $data['drm'] = "error";
                 }
             }
 
@@ -2482,7 +2497,8 @@ class Proje extends Backend_Controller
             "css/smartadmin-production.min.css",
             "css/smartadmin-skins.min.css",
             "css/smartadmin-rtl.min.css",
-            "css/demo.min.css"
+            "css/demo.min.css",
+            "js/plugin/sweetalert2/sweetalert2.min.css"
         );
         $data['jss']=array("js/app.config.js",
             "js/plugin/jquery-touch/jquery.ui.touch-punch.min.js",
@@ -2507,7 +2523,11 @@ class Proje extends Backend_Controller
             "js/plugin/datatables/dataTables.colVis.min.js",
             "js/plugin/datatables/dataTables.tableTools.min.js",
             "js/plugin/datatables/dataTables.bootstrap.min.js",
-            "js/plugin/datatable-responsive/datatables.responsive.min.js"
+            "js/plugin/datatable-responsive/datatables.responsive.min.js",
+
+            "js/notify.js",
+            "js/animate.js",
+            "js/plugin/sweetalert2/sweetalert2.min.js"
 
         );
 
@@ -2526,7 +2546,8 @@ class Proje extends Backend_Controller
             "css/smartadmin-production.min.css",
             "css/smartadmin-skins.min.css",
             "css/smartadmin-rtl.min.css",
-            "css/demo.min.css"
+            "css/demo.min.css",
+            "js/plugin/sweetalert2/sweetalert2.min.css"
         );
         $data['jss']=array("js/app.config.js",
             "js/plugin/jquery-touch/jquery.ui.touch-punch.min.js",
@@ -2545,7 +2566,11 @@ class Proje extends Backend_Controller
             "js/app.min.js",
             "js/speech/voicecommand.min.js",
             "js/smart-chat-ui/smart.chat.ui.min.js",
-            "js/smart-chat-ui/smart.chat.manager.min.js"
+            "js/smart-chat-ui/smart.chat.manager.min.js",
+
+            "js/notify.js",
+            "js/animate.js",
+            "js/plugin/sweetalert2/sweetalert2.min.js"
 
 
 
@@ -2559,11 +2584,13 @@ class Proje extends Backend_Controller
             $data['proje'] = $proje;
             $data['flash_message'] = TRUE;
             $data['mesaj'] = "Konum bilgisi Yüklendi.";
+            $data['drm'] = "success";
         }
         else
         {
             $data['flash_message'] = FALSE;
             $data['mesaj'] = "Konum Bilgisi Seçilemedi!";
+            $data['drm'] = "error";
         }
 
 
@@ -2584,7 +2611,6 @@ class Proje extends Backend_Controller
         //    $this->load->view('admin/harita3', $data);
 
 
-
         $data['main_content'] = 'admin/proje/duzenle';
         $this->load->view('admin/includes/template', $data);
     }
@@ -2600,7 +2626,8 @@ class Proje extends Backend_Controller
             "css/smartadmin-production.min.css",
             "css/smartadmin-skins.min.css",
             "css/smartadmin-rtl.min.css",
-            "css/demo.min.css"
+            "css/demo.min.css",
+            "js/plugin/sweetalert2/sweetalert2.min.css"
         );
         $data['jss']=array("js/app.config.js",
             "js/plugin/jquery-touch/jquery.ui.touch-punch.min.js",
@@ -2625,7 +2652,11 @@ class Proje extends Backend_Controller
             "js/plugin/datatables/dataTables.colVis.min.js",
             "js/plugin/datatables/dataTables.tableTools.min.js",
             "js/plugin/datatables/dataTables.bootstrap.min.js",
-            "js/plugin/datatable-responsive/datatables.responsive.min.js"
+            "js/plugin/datatable-responsive/datatables.responsive.min.js",
+
+            "js/notify.js",
+            "js/animate.js",
+            "js/plugin/sweetalert2/sweetalert2.min.js"
 
         );
 
@@ -2649,11 +2680,13 @@ class Proje extends Backend_Controller
                 {
                     $data['flash_message'] = TRUE;
                     $data['mesaj'] = "Proje Başarıyla Güncellendi.";
+                    $data['drm'] = "success";
                 }
                 else
                 {
                     $data['flash_message'] = FALSE;
                     $data['mesaj'] = "Proje Güncellenemedi!";
+                    $data['drm'] = "error";
                 }
             }
             else
@@ -2663,18 +2696,35 @@ class Proje extends Backend_Controller
                 if($islem)
                 {
                     $data['flash_message'] = TRUE;
-                    $data['mesaj'] = "Proje Başarıyla Güncellendi. (Proje Resmi Güncellenemedi!)";
+                    $data['mesaj'] = "Proje Başarıyla Güncellendi.(Proje Resmi Güncellenemedi!)";
+                    $data['drm'] = "success";
                 }
                 else
                 {
                     $data['flash_message'] = FALSE;
                     $data['mesaj'] = "Proje Güncellenemedi!";
+                    $data['drm'] = "error";
                 }
             }
 
             $data['main_content'] = 'admin/proje/projeler';
             $this->load->view('admin/includes/template', $data);
 
+        }
+
+
+    }
+
+    public function sil($id=null)
+    {
+        $islem = $this->projemodel->sil($id);
+        if($islem)
+        {
+            echo json_encode(array('drm' => "success", 'mesaj' => "Proje Başarıyla Silindi."));
+        }
+        else
+        {
+            echo json_encode(array('drm' => "error", 'mesaj' => "Proje Silinemedi!"));
         }
 
 

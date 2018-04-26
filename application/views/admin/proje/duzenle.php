@@ -1,3 +1,18 @@
+<script>
+    $(document).ready(function() {
+        $.popmesaj = function(drm,mesaj){
+            swal({
+                position: 'top-end',
+                type: drm,
+                title: mesaj,
+                showConfirmButton: false,
+                timer: 1000
+            })
+        }
+
+
+    })
+</script>
     <!-- MAIN CONTENT -->
     <div id="content">
         <div class="row">
@@ -96,6 +111,7 @@
                         <div class="widget-body no-padding">
 
                             <form id="order-form" class="smart-form" novalidate="novalidate" action="<?php echo site_url('yonetim/proje/guncelle')?>" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
                                 <input type="text" id="us2-id" hidden name="id" value="<?=$proje[0]->id?>" readonly>
                                 <?php
                                 if($flash_message)
@@ -103,8 +119,26 @@
                                     if($flash_message == TRUE)
                                     {
                                         echo '<p class="alert alert-success"> <strong><i class="fa fa-check"></i> BAŞARILI. :</strong> '.$mesaj.' </p>';
+                                    ?>
+                                        <script>
+                                            $(document).ready(function() {
+                                                var drm = "<?php echo $drm; ?>";
+                                                var mesaj = "<?php echo $mesaj; ?>";
+                                                $.popmesaj(drm,mesaj)
+                                            })
+                                        </script>
+                                    <?php
                                     }else{
                                         echo '<p class="alert alert-danger"> <strong><i class="fa fa-check"></i> HATA! :</strong> '.$mesaj.' </p>';
+                                    ?>
+                                        <script>
+                                            $(document).ready(function() {
+                                                var drm = "<?php echo $drm; ?>";
+                                                var mesaj = "<?php echo $mesaj; ?>";
+                                                $.popmesaj(drm,mesaj)
+                                            })
+                                        </script>
+                                        <?php
                                     }
                                 }
                                 else

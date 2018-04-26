@@ -28,6 +28,12 @@ class Projemodel extends CI_Model
         return $execute->result();
 
     }
+    public function sil($id=null)
+    {
+        $sql = "call projesil(?)";
+        $execute = $this->db->query($sql, array($id));
+        return $execute->result();
+    }
 
     public function durum()
     {

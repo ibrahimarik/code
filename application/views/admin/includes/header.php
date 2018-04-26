@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="tr-TR">
+<?php $this->security->get_csrf_hash(); $this->security->get_csrf_token_name(); ?>
 <head>
     <meta charset="utf-8">
     <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
 
-    <title> SmartAdmin </title>
+    <title> Ankara Valiliği </title>
     <meta name="description" content="">
     <meta name="author" content="">
 

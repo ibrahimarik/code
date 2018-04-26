@@ -97,6 +97,7 @@
                         <div class="widget-body no-padding">
 
                             <form id="order-form" class="smart-form" novalidate="novalidate" action="<?php echo site_url('yonetim/proje/ekle')?>" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
                                 <?php
                                 if($flash_message)
                                 {
